@@ -23,7 +23,8 @@ public class Demo
 		String generatedXMLStr = w.Write (envFoo);
 		Console.WriteLine ("Regenerated XML: " + generatedXMLStr);
 		
-		//Parse this generated xml again, make sure it's ok by us
-		Console.WriteLine ("Parsing our generated xml: " + parser.ParseFromString (generatedXMLStr));
+		//Check we can parse the string we just generated.
+		Environment envBaz = parser.ParseFromString (generatedXMLStr);
+		Console.WriteLine ("Parsing our generated xml: " + envBaz);
 	}
 }
