@@ -20,8 +20,10 @@ public class Demo
 		
 		//Serialize the Environment object back to xml.
 		EnvironmentXMLWriter w = new EnvironmentXMLWriter ();
-		String xmlStr = w.Write (envFoo);
-		Console.WriteLine ("Regenerated XML: " + xmlStr);
+		String generatedXMLStr = w.Write (envFoo);
+		Console.WriteLine ("Regenerated XML: " + generatedXMLStr);
+		
+		//Parse this generated xml again, make sure it's ok by us
+		Console.WriteLine ("Parsing our generated xml: " + parser.ParseFromString (generatedXMLStr));
 	}
-
 }

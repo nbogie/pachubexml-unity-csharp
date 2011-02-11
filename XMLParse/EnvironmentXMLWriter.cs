@@ -17,7 +17,10 @@ public class EnvironmentXMLWriter
               xsi:schemaLocation=""http://www.eeml.org/xsd/0.5.1 http://www.eeml.org/xsd/0.5.1/0.5.1.xsd""></eeml>";
 		xmlDoc.LoadXml (basexml);
 		XmlNode root = xmlDoc.DocumentElement;
-		XmlElement nEnv = xmlDoc.CreateElement ("environment");
+
+		//It seems we must explicitly specify each node's namespace
+		//If we leave ns out, it won't just inherit from parent re ns but will say xmlns=""
+		XmlElement nEnv = xmlDoc.CreateElement ("environment",xmlDoc.DocumentElement.NamespaceURI);
 		
 		//Add the node to the document.
 		root.AppendChild (nEnv);
@@ -44,14 +47,14 @@ public class EnvironmentXMLWriter
 
 	public XmlNode UtilSimpleTextNode (XmlDocument doc, String tag, String val)
 	{
-		XmlElement elem = doc.CreateElement (tag);
+		XmlElement elem = doc.CreateElement (tag, doc.DocumentElement.NamespaceURI);
 		elem.InnerText = val;
 		return elem;
 	}
 
 	XmlNode MakeDatastreamXML (Datastream ds, XmlDocument doc)
 	{
-		XmlElement nDS = doc.CreateElement ("data");
+		XmlElement nDS = doc.CreateElement ("data", doc.DocumentElement.NamespaceURI);
 		nDS.SetAttribute ("id", ds.id);
 		nDS.AppendChild (UtilSimpleTextNode (doc, "current_value", ds.currentValue));
 		foreach (String tag in ds.tags) {
@@ -62,7 +65,8 @@ public class EnvironmentXMLWriter
 
 	XmlNode MakeLocationXML (Location loc, XmlDocument doc)
 	{
-		XmlElement nLoc = doc.CreateElement ("location");
+		String x = doc.DocumentElement.NamespaceURI;
+		XmlElement nLoc = doc.CreateElement ("location", x);
 		nLoc.SetAttribute ("domain", loc.domain);
 		nLoc.SetAttribute ("exposure", loc.exposure);
 		nLoc.SetAttribute ("disposition", loc.disposition);
