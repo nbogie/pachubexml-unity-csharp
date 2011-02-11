@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLParse", "XMLParse\XMLParse.csproj", "{D5DD22E9-9773-40E6-A8EB-DE38D37D8C50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0969DEBF-2169-4750-B148-5C30BE62D595}"
+	ProjectSection(SolutionItems) = preProject
+		XMLParse\Example.cs = XMLParse\Example.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5DD22E9-9773-40E6-A8EB-DE38D37D8C50}.Debug|x86.ActiveCfg = Debug|x86
+		{D5DD22E9-9773-40E6-A8EB-DE38D37D8C50}.Debug|x86.Build.0 = Debug|x86
+		{D5DD22E9-9773-40E6-A8EB-DE38D37D8C50}.Release|x86.ActiveCfg = Release|x86
+		{D5DD22E9-9773-40E6-A8EB-DE38D37D8C50}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = XMLParse\XMLParse.csproj
+	EndGlobalSection
+EndGlobal
