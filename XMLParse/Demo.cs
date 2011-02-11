@@ -5,7 +5,8 @@ public class Demo
 {
 	public static void Main (string[] args)
 	{
-		String yourXmlString = System.IO.File.ReadAllText( "basic.xml" );
+		String inputFilePath =  "../../TestFiles/basic.xml" ;
+		String yourXmlString = System.IO.File.ReadAllText( inputFilePath);
 
 		EnvironmentParser parser = new EnvironmentParser ();
 		
@@ -14,8 +15,7 @@ public class Demo
 		Console.WriteLine ("Environment: " + envBar);
 
 		//Or load from file
-		String inputFilename = "basic.xml";
-		Environment envFoo = parser.ParseFromFile (inputFilename);
+		Environment envFoo = parser.ParseFromFile (inputFilePath);
 		//Console.WriteLine ("Environment: " + envFoo);
 		
 		//Serialize the Environment object back to xml.
