@@ -26,6 +26,24 @@ Patches
 Usage
 =====
 
+::
+
+        //Parse xml doc using System.XML (we'll hide this eventually)
+        XmlDocument xmlDoc = new XmlDocument ();
+        xmlDoc.Load ("path_to_file.xml");
+        XmlNamespaceManager nsman = new XmlNamespaceManager (xmlDoc.NameTable);
+        nsman.AddNamespace ("ns", xmlDoc.DocumentElement.NamespaceURI);
+
+        //From the xml doc, create an Environment.
+        EnvironmentParser parser = new EnvironmentParser ();
+        Environment env = parser.Parse (xmlDoc, nsman);
+        //Use your environment
+
+        //Serialize the Environment object back to xml.
+        EnvironmentXMLWriter w = new EnvironmentXMLWriter ();
+        String xmlGenerated = w.Write(env);
+        Console.WriteLine ("Regenerated XML: " + xmlGenerated);
+
 Getting Help
 ============
 
