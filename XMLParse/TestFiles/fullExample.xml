@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eeml xmlns="http://www.eeml.org/xsd/0.5.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="0.5.1" xsi:schemaLocation="http://www.eeml.org/xsd/005 http://www.eeml.org/xsd/005/005.xsd">
+    <environment updated="2010-06-08T09:30:11Z" id="504" creator="http://www.pachube.com">
+        <title>Pachube Office environment</title>
+        <feed>http://api.pachube.com/v2/feeds/504.xml</feed>
+        <status>live</status>
+        <website>http://www.haque.co.uk/</website>
+        <private>false</private>
+        <tag>Tag1</tag>
+        <tag>Tag2</tag>
+        <location domain="physical" exposure="indoor" disposition="fixed">
+            <name>office</name>
+            <lat>51.5235375648154</lat>
+            <lon>-0.0807666778564453</lon>
+            <ele>23.0</ele>
+        </location>
+        <data id="0">
+            <tag>humidity</tag>
+            <min_value>0.0</min_value>
+            <max_value>847.o</max_value>
+            <current_value at="2010-06-08T09:30:11.000000Z">311</current_value>
+            <datapoints>
+                <value at="2009-07-05T09:24:03.339244Z">008</value>
+                <value at="2009-07-05T09:24:03.339244Z">546</value>
+                <value at="2009-07-05T09:24:03.339244Z">123</value>
+            </datapoints>
+        </data>
+    </environment>
+</eeml>

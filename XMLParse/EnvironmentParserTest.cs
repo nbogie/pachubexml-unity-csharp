@@ -21,7 +21,7 @@ public class EnvironmentParserTest
 	[Test]
 	public void TestParseExampleFromAPIDocs ()
 	{
-		XHelp.QuickParseFile ("fullExampleFixed.xml");
+		XHelp.QuickParseFile ("fullExample.xml");
 	}
 
 	[Test]
@@ -53,6 +53,5 @@ public class XHelp
 		EnvironmentParser parser = new EnvironmentParser ();
 		Environment e = parser.Parse (xmlDoc, nsman);
 		return e;
-	}
-	
+	}	
 }
