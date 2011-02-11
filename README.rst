@@ -26,7 +26,7 @@ Patches
 Usage
 =====
 
-::
+.. code-block:: csharp
 
         //Parse xml doc using System.XML (we'll hide this eventually)
         XmlDocument xmlDoc = new XmlDocument ();
