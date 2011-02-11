@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLParse", "XMLParse\XMLPar
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0969DEBF-2169-4750-B148-5C30BE62D595}"
 	ProjectSection(SolutionItems) = preProject
-		XMLParse\Example.cs = XMLParse\Example.cs
+		foo.txt = foo.txt
 	EndProjectSection
 EndProject
 Global

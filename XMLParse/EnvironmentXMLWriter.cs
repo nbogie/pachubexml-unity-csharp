@@ -11,6 +11,12 @@ public class EnvironmentXMLWriter
 	public String Write (Environment env)
 	{
 		XmlDocument xmlDoc = new XmlDocument ();
+/*
+		 * string basexml = @"<?xml version=""1.0"" encoding=""UTF-8""?>
+		<eeml xmlns=""http://www.eeml.org/xsd/0.5.1"" 
+			  xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" version=""0.5.1"" 
+              xsi:schemaLocation=""http://www.eeml.org/xsd/0.5.1 http://www.eeml.org/xsd/0.5.1/0.5.1.xsd""></eeml>";
+*/
 		string basexml = @"<?xml version=""1.0"" encoding=""UTF-8""?>
 		<eeml xmlns=""http://www.eeml.org/xsd/0.5.1""></eeml>";
 		xmlDoc.LoadXml (basexml);

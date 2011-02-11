@@ -5,16 +5,23 @@ public class Demo
 {
 	public static void Main (string[] args)
 	{
-		String filename = "basic.xml";
+		String yourXmlString = System.IO.File.ReadAllText( "basic.xml" );
+
 		EnvironmentParser parser = new EnvironmentParser ();
-		Environment env = parser.ParseFromFile (filename);
 		
-		// Environment ez = parser.Parse (xmlDoc, nsman);
-		Console.WriteLine ("Environment: " + env);
+		//Load from a string
+		Environment envBar = parser.ParseFromString(yourXmlString);
+		Console.WriteLine ("Environment: " + envBar);
+
+		//Or load from file
+		String inputFilename = "basic.xml";
+		Environment envFoo = parser.ParseFromFile (inputFilename);
+		//Console.WriteLine ("Environment: " + envFoo);
+		
 		//Serialize the Environment object back to xml.
 		EnvironmentXMLWriter w = new EnvironmentXMLWriter ();
-		String xmlGenerated = w.Write (env);
-		Console.WriteLine ("Regenerated XML: " + xmlGenerated);		
+		String xmlStr = w.Write (envFoo);
+		Console.WriteLine ("Regenerated XML: " + xmlStr);
 	}
-	
+
 }

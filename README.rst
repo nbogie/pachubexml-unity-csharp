@@ -26,23 +26,31 @@ Patches
 Usage
 =====
 
-.. code-block:: csharp
+::
 
-        //Parse xml doc using System.XML (we'll hide this eventually)
-        XmlDocument xmlDoc = new XmlDocument ();
-        xmlDoc.Load ("path_to_file.xml");
-        XmlNamespaceManager nsman = new XmlNamespaceManager (xmlDoc.NameTable);
-        nsman.AddNamespace ("ns", xmlDoc.DocumentElement.NamespaceURI);
+	String yourXmlString = System.IO.File.ReadAllText( "basic.xml" );
 
-        //From the xml doc, create an Environment.
-        EnvironmentParser parser = new EnvironmentParser ();
-        Environment env = parser.Parse (xmlDoc, nsman);
-        //Use your environment
+	EnvironmentParser parser = new EnvironmentParser ();
 
-        //Serialize the Environment object back to xml.
-        EnvironmentXMLWriter w = new EnvironmentXMLWriter ();
-        String xmlGenerated = w.Write(env);
-        Console.WriteLine ("Regenerated XML: " + xmlGenerated);
+
+	//Load from a string
+	Environment envBar = parser.ParseFromString(yourXmlString);
+	Console.WriteLine ("Environment: " + envBar);
+
+
+
+	//Or load from file
+	String inputFilename = "basic.xml";
+	Environment envFoo = parser.ParseFromFile (inputFilename);
+	//Console.WriteLine ("Environment: " + envFoo);
+
+
+
+	//Serialize the Environment object back to xml.
+	EnvironmentXMLWriter w = new EnvironmentXMLWriter ();
+	String xmlStr = w.Write (envFoo);
+	Console.WriteLine ("Regenerated XML: " + xmlStr);
+
 
 Getting Help
 ============
