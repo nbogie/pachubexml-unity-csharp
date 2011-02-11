@@ -21,7 +21,15 @@ public class EnvironmentParser
 	public EnvironmentParser ()
 	{
 	}
-
+	public Environment ParseFromFile(String filename)
+	{
+		XmlDocument xmlDoc = new XmlDocument ();
+		xmlDoc.Load (filename);
+		XmlNamespaceManager nsman = new XmlNamespaceManager (xmlDoc.NameTable);
+		nsman.AddNamespace ("ns", xmlDoc.DocumentElement.NamespaceURI);		
+		return Parse(xmlDoc, nsman);
+	}
+	
 	//TODO: handle parse exceptions (missing attrs, nodes, unexpected types (e.g. non-integer env id, bad timestamp, etc)
 	//TODO: split datastream parsing so we can do that without an env.
 	public Environment Parse (XmlDocument doc, XmlNamespaceManager nsman)
