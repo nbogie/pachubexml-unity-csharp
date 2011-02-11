@@ -4,10 +4,6 @@ using System.Collections;
 using System.IO;
 public class EnvironmentXMLWriter
 {
-	public EnvironmentXMLWriter ()
-	{
-	}
-
 	public String Write (Environment env)
 	{
 		XmlDocument xmlDoc = new XmlDocument ();
@@ -45,7 +41,7 @@ public class EnvironmentXMLWriter
 		return sw.ToString ();
 	}
 
-	public XmlNode UtilSimpleTextNode (XmlDocument doc, String tag, String val)
+	XmlNode UtilSimpleTextNode (XmlDocument doc, String tag, String val)
 	{
 		XmlElement elem = doc.CreateElement (tag, doc.DocumentElement.NamespaceURI);
 		elem.InnerText = val;
